@@ -12,19 +12,26 @@
                       <nav class="mt-10 px-6 ">
                         <a
                           class="mt-3 flex items-center py-2 px-4 text-gray-700 bg-gray-200 rounded-md dark:bg-gray-700 dark:text-gray-200"
-                          href="#"
+                          href="dashboard"
                         >
 
                           <span class="mx-4 font-medium">Inicio</span>
                         </a>
 
-                        <a class="mt-3 flex items-center py-2 px-4 text-gray-600 rounded-md dark:text-gray-400" href="{{route("user.configuration")}}">
+                        <a class="mt-3 flex items-center py-2 px-4 text-gray-600 rounded-md dark:text-gray-400" href="{{route('profile.edit')}}">
 
                           <span class="mx-4 font-medium">Configuraciones</span>
                         </a>
-                        <a class="mt-3 flex items-center py-2 px-4 text-gray-600 rounded-md dark:text-gray-400" href="{{route("user.solicitudes")}}">
+                        <a class="mt-3 flex items-center py-2 px-4 text-gray-600 rounded-md dark:text-gray-400" href="{{route('user.solicitudes')}}">
                             <span class="mx-4 font-medium">Mis solicitudes</span>
-                          </a>
+                        </a>
+                        <form method="POST" action="{{route('logout')}}" class="mt-3">
+                            @csrf
+                            <button type="submit" class="flex items-center py-2 px-4 text-gray-600 rounded-md dark:text-gray-400">
+                                <span class="mx-4 font-medium">Cerrar Sesión</span>
+                            </button>
+                        </form>
+
                       </nav>
                     </nav>
                     <div class="flex flex-col flex-1 p-6 overflow-hidden">
@@ -48,7 +55,7 @@
 
                               <div class="flex space-x-4 overflow-x-auto">
                                 <div class="card bg-dark flex-shrink-0 mx-2">
-                                    <a href="">
+                                    <a href="{{route('reservation.rafapina')}}">
                                     <img
                                     alt="Auditorio"
                                     class="w-full logo rounded-lg"
@@ -62,7 +69,7 @@
                                 </a>
                                 </div>
                                 <div class="card bg-dark flex-shrink-0 mx-2">
-                                    <a href="">
+                                    <a href="{{route('reservation.directores')}}">
                                     <img
                                     alt="Ex-directores"
                                     class="w-full logo rounded-lg"
@@ -76,7 +83,7 @@
                                 </a>
                                 </div>
                                 <div class="card bg-dark flex-shrink-0">
-                                    <a href="">
+                                    <a href="{{route('reservation.auditorio')}}">
                                     <img
                                     alt="Auditorio"
                                     class="w-full logo rounded-lg"
