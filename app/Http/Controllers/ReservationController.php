@@ -39,7 +39,8 @@ class ReservationController extends Controller {
         return view('exdirectoresSchedule' , ['email' => $userEmail]);
     }
     public function auditorio() {
-        return view('auditorioSchedule');
+        $userEmail = Auth::user()->email;
+        return view('auditorioSchedule', ['email' => $userEmail]);
     }
 
 

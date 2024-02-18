@@ -34,26 +34,44 @@
 
                       </nav>
                     </nav>
-                    <!-- En tu vista -->
-<table>
-    <thead>
-        <tr>
-            <th>Nombre de Sala</th>
-            <th>Fecha de Reserva</th>
-            <!-- Otros campos... -->
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($reservaciones as $reservacion)
-            <tr>
-                <td>{{ $reservacion->nombre_sala }}</td>
-                <td>{{ $reservacion->reservation_date }}</td>
-                <!-- Otros campos... -->
-            </tr>
-        @endforeach
-    </tbody>
-</table>
+                    <div class="container">
+        <h2 class="text-white 3xl">Mis Reservaciones</h2>
 
+        
+        <table class="min-w-full bg-gray-800 border border-gray-600 shadow-sm rounded-md overflow-hidden">
+                            <thead class="bg-gray-700">
+                                <tr>
+                                    
+                                    <th class="py-2 px-4 border-b text-white">Nombre de Sala</th>
+                                    <th class="py-2 px-4 border-b text-white">Fecha</th>
+                                    <th class="py-2 px-4 border-b text-white">Acomodo</th>
+                                    <th class="py-2 px-4 border-b text-white">Especificaciones</th>
+                                    <th class="py-2 px-4 border-b text-white">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($reservaciones as $reservacion)
+                                
+                                    <tr class="hover:bg-gray-700">
+                                        
+                                        <td class="py-2 px-4 border-b text-white">{{ $reservacion->nombre_sala }}</td>
+                                        <td class="py-2 px-4 border-b text-white">{{ $reservacion->reservation_date }}</td>
+                                        <td class="py-2 px-4 border-b text-white">{{ $reservacion->acomodo }}</td>
+                                        <td class="py-2 px-4 border-b text-white">{{ $reservacion->reservation_message }}</td>
+                                        <td class="py-2 px-4 border-b text-white">
+                                        @if ($reservacion->status == 0)
+                                            Rechazada
+                                        @elseif ($reservacion->status == 1)
+                                            En revisión
+                                        @elseif ($reservacion->status == 2)
+                                            Aceptada
+                                        @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+    </div>
                   </main>
             </div>
         </div>
