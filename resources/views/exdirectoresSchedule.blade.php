@@ -73,6 +73,8 @@
                         name="reservation_date"
                     />
                     <br>
+                    <input  class="w-full mt-2 p-2 border border-gray-300 rounded-md dark:border-gray-800 dark:bg-gray-700 dark:text-gray-300" type="text" value="{{ $email }}" name="email" readonly>
+                    <br>
                     <div class="checkbox-container">
                     <h5 class=" text-gray-700 dark:text-gray-200">Seleccionar acomodo del mobiliario y especificaciones adicionales:</h5><br>
                         <label class="checkbox-label">
