@@ -41,14 +41,14 @@
             <div class="flex flex-col mt-6">
               <div class="flex flex-col mt-6">
                 <div class="flex flex-col mt-4">
-                  <span class="text-lg text-gray-700 dark:text-gray-200">Sala Rafael Piña</span>
+                  <span class="text-lg text-gray-700 dark:text-gray-200">Sala de Ex Directores</span>
                   <div class="flex space-x-4 overflow-x-auto">
                     <div class="card bg-dark flex-shrink-0 mx-2">
                         <img
                         alt="RafaPina"
                         class="w-full logo rounded-lg"
                         height="200"
-                        src="/images/rafapina.jpeg"
+                        src="/images/exdirectores.webp"
                         width="200"
                     />
                         <div class="card-body">

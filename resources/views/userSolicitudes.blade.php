@@ -34,7 +34,26 @@
 
                       </nav>
                     </nav>
-                    
+                    <!-- En tu vista -->
+<table>
+    <thead>
+        <tr>
+            <th>Nombre de Sala</th>
+            <th>Fecha de Reserva</th>
+            <!-- Otros campos... -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($reservaciones as $reservacion)
+            <tr>
+                <td>{{ $reservacion->nombre_sala }}</td>
+                <td>{{ $reservacion->reservation_date }}</td>
+                <!-- Otros campos... -->
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+
                   </main>
             </div>
         </div>

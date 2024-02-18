@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Reservation;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller {
@@ -14,29 +16,37 @@ class ReservationController extends Controller {
             'acomodo' => ['required', 'string'],
             'reservation_message' => ['nullable', 'string'],
         ]);
-        $userEmail = Auth::user()->email;
-        dd($email);
+        
         Reservation::create([
             'nombre_sala' => $request->input('nombre_sala'),
-        'fecha' => $request->input('reservation_date'),
-        'correo' => $request->input('email'),
+            'reservation_date' => $request->input('reservation_date'),
+        'email' => $request->input('email'),
         'acomodo' => $request->input('acomodo'), // Esto almacenará la opción seleccionada en el checkbox
-        'especificaciones' => $request->input('reservation_message'),
+        'reservation_message' => $request->input('reservation_message'),
             'status' => 1, // Estado "sin responder"
             
         ]);
-        return redirect()->route('nombre_de_la_ruta');
+        return redirect()->route('user.reservation')->with('success', 'Reserva realizada con éxito');
     }
 
     public function rafapina() {
-        $email = Auth::user()->email;
-        return view('rafapinaSchedule' , ['email' => $email]);
+        $userEmail = Auth::user()->email;
+        
+        return view('rafapinaSchedule' , ['email' => $userEmail]);
     }
     public function exdirectores() {
+        $userEmail = Auth::user()->email;
         return view('exdirectoresSchedule');
     }
     public function auditorio() {
         return view('auditorioSchedule');
     }
+
+
+    public function reservationSuccessful()
+    {
+        return view('successReservation');
+    }
+
 }
 

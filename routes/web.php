@@ -40,6 +40,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/reservation/exdirectores', [ReservationController::class, 'exdirectores'])->name('reservation.directores');
     Route::get('/reservation/auditorio', [ReservationController::class, 'auditorio'])->name('reservation.auditorio');
     Route::post('/reservations/store', [ReservationController::class, 'store'])->name('reservations.store');
+
+    Route::get('/dashboard/reservation', [ReservationController::class, 'reservationSuccessful'])->name('user.reservation');
+    
 });
 
 require __DIR__.'/auth.php';

@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Reservation;
 
 class UserController extends Controller
 {
@@ -11,6 +12,12 @@ class UserController extends Controller
         return view('userConfiguration');
     }
     public function showsolicitudes() {
-        return view('userSolicitudes');
+        
+        $usuario = Auth::user();
+
+    // Obtener las reservaciones del usuario actual
+    $reservaciones = Reservation::where('email', $usuario->email)->get();
+
+    return view('userSolicitudes', ['reservaciones' => $reservaciones]);
     }
 }
