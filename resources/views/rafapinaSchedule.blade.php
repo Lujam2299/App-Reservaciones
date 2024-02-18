@@ -78,13 +78,13 @@
                     <div class="checkbox-container">
                     <h5 class=" text-gray-700 dark:text-gray-200">Seleccionar acomodo del mobiliario y especificaciones adicionales:</h5><br>
                         <label class="checkbox-label">
-                            <input type="checkbox" name="acomodo" id="acomodo" onclick="handleCheckboxClick(this)"> Acomodo en U
+                            <input type="checkbox" name="acomodo" id="acomodo" value="Acomodo en U" onclick="handleCheckboxClick(this)"> Acomodo en U
                         </label><br>
                         <label class="checkbox-label">
-                            <input type="checkbox" name="acomodo" id="acomodo" onclick="handleCheckboxClick(this)"> Acomodo tipo Mesas y Sillas
+                            <input type="checkbox" name="acomodo" id="acomodo" value="Acomodo tipo mesas y sillas" onclick="handleCheckboxClick(this)"> Acomodo tipo Mesas y Sillas
                         </label><br>
                         <label class="checkbox-label">
-                            <input type="checkbox" name="acomodo" id="acomodo" onclick="handleCheckboxClick(this)"> Acomodo tipo Conferencia
+                            <input type="checkbox" name="acomodo" id="acomodo" value="Acomodo en tipo Conferencia" onclick="handleCheckboxClick(this)"> Acomodo tipo Conferencia
                         </label><br>
                     </div><br>
                     <textarea
@@ -106,7 +106,7 @@
     </div>
     <script>
         function handleCheckboxClick(clickedCheckbox) {
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            vvar checkboxes = document.querySelectorAll('input[name="acomodo"]');
             
             // Deseleccionar todos los checkboxes
             checkboxes.forEach(function (checkbox) {

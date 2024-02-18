@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nombre_sala');
             $table->date('reservation_date');
             $table->string('email');
-            $table->boolean('acomodo')->default(false);
+            $table->string('acomodo');
             $table->text('reservation_message')->nullable();
             $table->integer('status')->default(1); 
         $table->timestamps();
